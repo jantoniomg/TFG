@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c65b65sjd0wwg"
-path="res://.godot/imported/fondo.jpg-c0e4b163f8189b86a1b39125664eba60.ctex"
+uid="uid://dgoyetg0hp144"
+path="res://.godot/imported/foto_BlackJack.jpeg-94baef0b1c38bddc901b8c876356544f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/fondo.jpg"
-dest_files=["res://.godot/imported/fondo.jpg-c0e4b163f8189b86a1b39125664eba60.ctex"]
+source_file="res://assets/images/foto_BlackJack.jpeg"
+dest_files=["res://.godot/imported/foto_BlackJack.jpeg-94baef0b1c38bddc901b8c876356544f.ctex"]
 
 [params]
 

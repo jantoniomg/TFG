@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c65b65sjd0wwg"
-path="res://.godot/imported/fondo.jpg-c0e4b163f8189b86a1b39125664eba60.ctex"
+uid="uid://cywjverrs8hg2"
+path="res://.godot/imported/foto_Ruleta.jpeg-4ee5c9f8eac686e97e5ca295e585ff9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/fondo.jpg"
-dest_files=["res://.godot/imported/fondo.jpg-c0e4b163f8189b86a1b39125664eba60.ctex"]
+source_file="res://assets/images/foto_Ruleta.jpeg"
+dest_files=["res://.godot/imported/foto_Ruleta.jpeg-4ee5c9f8eac686e97e5ca295e585ff9b.ctex"]
 
 [params]
 

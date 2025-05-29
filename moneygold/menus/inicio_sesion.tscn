@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dumc8r1i2fo8v"]
 
 [ext_resource type="Script" uid="uid://nrybyeyrg3va" path="res://menus/inicio_sesion.gd" id="1_hg10s"]
-[ext_resource type="Texture2D" uid="uid://dr8q7lq5gfrbp" path="res://assets/images/fondo.jpg" id="1_rm6y2"]
+[ext_resource type="Texture2D" uid="uid://c65b65sjd0wwg" path="res://assets/images/fondo.jpg" id="1_rm6y2"]
 
 [node name="InicioSesion" type="Control"]
 layout_mode = 3

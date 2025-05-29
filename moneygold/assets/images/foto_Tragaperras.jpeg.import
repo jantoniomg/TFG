@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c65b65sjd0wwg"
-path="res://.godot/imported/fondo.jpg-c0e4b163f8189b86a1b39125664eba60.ctex"
+uid="uid://762bn44r4hkt"
+path="res://.godot/imported/foto_Tragaperras.jpeg-a44b3f0af99df5684f0d0525bb7d3605.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/fondo.jpg"
-dest_files=["res://.godot/imported/fondo.jpg-c0e4b163f8189b86a1b39125664eba60.ctex"]
+source_file="res://assets/images/foto_Tragaperras.jpeg"
+dest_files=["res://.godot/imported/foto_Tragaperras.jpeg-a44b3f0af99df5684f0d0525bb7d3605.ctex"]
 
 [params]
 
