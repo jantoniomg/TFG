@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ltlb140aqur4"]
+[gd_scene load_steps=7 format=3 uid="uid://ltlb140aqur4"]
 
 [ext_resource type="Script" uid="uid://dymptdgqn1fcx" path="res://menus/script/menu_juegos.gd" id="1_2rpal"]
 [ext_resource type="Texture2D" uid="uid://cywjverrs8hg2" path="res://assets/images/foto_Ruleta.jpeg" id="1_7oyay"]
 [ext_resource type="Texture2D" uid="uid://blsidblnkdhvh" path="res://icon.svg" id="1_fgk0e"]
+[ext_resource type="Texture2D" uid="uid://xb1qfgowgm7n" path="res://assets/images/blackjack/table.jpg" id="2_sc66r"]
 [ext_resource type="Texture2D" uid="uid://dgoyetg0hp144" path="res://assets/images/foto_BlackJack.jpeg" id="2_sluh0"]
 [ext_resource type="Texture2D" uid="uid://762bn44r4hkt" path="res://assets/images/foto_Tragaperras.jpeg" id="4_sluh0"]
 
@@ -15,14 +16,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2rpal")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.190762, 0.190762, 0.190762, 1)
+texture = ExtResource("2_sc66r")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

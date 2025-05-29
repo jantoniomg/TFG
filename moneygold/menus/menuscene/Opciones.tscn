@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://csd4sfeivb5qm"]
 
-[ext_resource type="Texture2D" uid="uid://c65b65sjd0wwg" path="res://assets/images/fondo.jpg" id="1_5r2df"]
 [ext_resource type="Script" uid="uid://4ip63xelqpco" path="res://menus/script/opciones.gd" id="1_230bq"]
+[ext_resource type="Texture2D" uid="uid://cd52oqbhqi5id" path="res://assets/images/fondo.png" id="2_230bq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3qxo"]
 bg_color = Color(0, 0, 0, 1)
@@ -28,7 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_5r2df")
+texture = ExtResource("2_230bq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
