@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dumc8r1i2fo8v"]
+[gd_scene load_steps=3 format=3 uid="uid://dumc8r1i2fo8v"]
 
+[ext_resource type="Script" uid="uid://nrybyeyrg3va" path="res://menus/inicio_sesion.gd" id="1_hg10s"]
 [ext_resource type="Texture2D" uid="uid://dr8q7lq5gfrbp" path="res://assets/images/fondo.jpg" id="1_rm6y2"]
 
 [node name="InicioSesion" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hg10s")
 metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -97,7 +99,7 @@ offset_bottom = 534.0
 text = "Registrarse"
 metadata/_edit_lock_ = true
 
-[node name="Label2" type="Label" parent="Panel"]
+[node name="Estado" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 352.0
 offset_top = 493.0
@@ -107,3 +109,6 @@ text = "No tienes cuenta ?"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Panel/Iniciar sesion" to="." method="_on_iniciar_sesion_pressed"]
+[connection signal="pressed" from="Panel/Registrarse" to="." method="_on_registrarse_pressed"]

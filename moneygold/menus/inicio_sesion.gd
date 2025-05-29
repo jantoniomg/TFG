@@ -31,7 +31,7 @@ func _on_registrarse_pressed() -> void:
 func on_login_succeeded(auth):
 	print(auth)
 	Firebase.Auth.save_auth(auth)
-	get_tree().change_scene_to_file(" ")
+	get_tree().change_scene_to_file("")
 	
 func on_signup_succeeded(auth):
 	print(auth)
