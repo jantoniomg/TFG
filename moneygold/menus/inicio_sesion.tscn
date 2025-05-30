@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dumc8r1i2fo8v"]
 
-[ext_resource type="Script" uid="uid://nrybyeyrg3va" path="res://menus/inicio_sesion.gd" id="1_hg10s"]
+[ext_resource type="Script" uid="uid://nrybyeyrg3va" path="res://menus/script/inicio_sesion.gd" id="1_hg10s"]
 [ext_resource type="Texture2D" uid="uid://cd52oqbhqi5id" path="res://assets/images/fondo.png" id="2_hg10s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hg10s"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0uopuis0h0pe"]
+
+[ext_resource type="Texture2D" uid="uid://dar03ux8vxsfh" path="res://icon.svg" id="1_2gj6q"]
+[ext_resource type="Script" uid="uid://dpmcst3hekl2" path="res://header y footer/header.gd" id="1_kafi8"]
+
+[node name="Header" type="Node2D"]
+script = ExtResource("1_kafi8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 127.0
+color = Color(0, 0.352941, 0.105882, 0.619608)
+
+[node name="Nombre" type="Label" parent="."]
+offset_left = 147.0
+offset_top = 18.0
+offset_right = 245.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 20
+text = "Nombre"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Banco" type="Label" parent="."]
+offset_left = 281.0
+offset_top = 18.0
+offset_right = 372.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 20
+text = "Banco:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dineroB" type="Label" parent="."]
+offset_left = 346.0
+offset_top = 18.0
+offset_right = 444.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 20
+text = "1000€"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fisico" type="Label" parent="."]
+offset_left = 480.0
+offset_top = 18.0
+offset_right = 567.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 20
+text = "Dinero:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dineroF" type="Label" parent="."]
+offset_left = 552.0
+offset_top = 18.0
+offset_right = 643.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 20
+text = "1000€"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_right = 129.0
+offset_bottom = 128.0
+texture = ExtResource("1_2gj6q")

@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://cmg01ecrrs0y8"]
+[gd_scene load_steps=3 format=3 uid="uid://cmg01ecrrs0y8"]
+
+[ext_resource type="Texture2D" uid="uid://xb1qfgowgm7n" path="res://assets/images/blackjack/table.jpg" id="1_6725h"]
+[ext_resource type="PackedScene" uid="uid://b0uopuis0h0pe" path="res://header y footer/header.tscn" id="2_hc0cg"]
 
 [node name="Ruleta" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1156.0
+offset_bottom = 653.0
+texture = ExtResource("1_6725h")
+
+[node name="Header" parent="." instance=ExtResource("2_hc0cg")]

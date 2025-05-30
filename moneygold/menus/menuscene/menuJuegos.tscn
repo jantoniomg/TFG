@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ltlb140aqur4"]
+[gd_scene load_steps=8 format=3 uid="uid://ltlb140aqur4"]
 
 [ext_resource type="Script" uid="uid://dymptdgqn1fcx" path="res://menus/script/menu_juegos.gd" id="1_2rpal"]
 [ext_resource type="Texture2D" uid="uid://cywjverrs8hg2" path="res://assets/images/foto_Ruleta.jpeg" id="1_7oyay"]
-[ext_resource type="Texture2D" uid="uid://blsidblnkdhvh" path="res://icon.svg" id="1_fgk0e"]
+[ext_resource type="Texture2D" uid="uid://dar03ux8vxsfh" path="res://icon.svg" id="1_fgk0e"]
 [ext_resource type="Texture2D" uid="uid://xb1qfgowgm7n" path="res://assets/images/blackjack/table.jpg" id="2_sc66r"]
 [ext_resource type="Texture2D" uid="uid://dgoyetg0hp144" path="res://assets/images/foto_BlackJack.jpeg" id="2_sluh0"]
 [ext_resource type="Texture2D" uid="uid://762bn44r4hkt" path="res://assets/images/foto_Tragaperras.jpeg" id="4_sluh0"]
+[ext_resource type="PackedScene" uid="uid://b0uopuis0h0pe" path="res://header y footer/header.tscn" id="7_lyeiu"]
 
 [node name="MenuJuegos" type="Control"]
 layout_mode = 3
@@ -25,6 +26,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_sc66r")
 
+[node name="Header" parent="." instance=ExtResource("7_lyeiu")]
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -32,10 +35,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -572.5
-offset_top = -254.5
-offset_right = 572.5
-offset_bottom = 254.5
+offset_left = -574.0
+offset_top = -185.0
+offset_right = 571.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 
