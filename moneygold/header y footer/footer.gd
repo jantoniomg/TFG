@@ -6,11 +6,20 @@ var color_not_selected : Color = Color.DIM_GRAY
 func _ready() -> void:
 	for child in get_children():
 		if child is Button:
-			child.add_theme_color_override("font_color", color_selected)
-			child.pressed.connect(_on_any_button_pressed)
+			child.pressed.connect(_on_any_button_pressed.bind(child.name))
 
-func _on_any_button_pressed():
+func _on_any_button_pressed(btn_name):
+	for child in get_children():
+		if child is Button:
+			if child.name != btn_name:
+				child.add_theme_color_override("font_color", color_not_selected)
+			else:
+				child.add_theme_color_override("font_color", color_selected)
+				child.add_theme_color_override("font_focus_color", color_selected)
+				child.add_theme_color_override("font_hover_color", color_selected)
 	print ("algun btn apretado")
+	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

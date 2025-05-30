@@ -5,8 +5,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	dineroF_label.text = str(CargarDatos.cash)
-	CargarDatos.cash_updated.conect(new_cash)
+	dineroF_label.text = str(CargarDatos.dineroFisico)
+	CargarDatos.cash_updated.connect(actualizado_dineroFisico)
 
 func new_cash(new_value):
-	dineroF_label.text = str(CargarDatos.cash)
+	dineroF_label.text = str(CargarDatos.dineroFisico)
