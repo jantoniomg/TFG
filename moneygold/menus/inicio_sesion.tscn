@@ -48,6 +48,12 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
+[node name="Estado" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Usuario" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -64,7 +70,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_hg10s")
 text = "Iniciar sesion"
 
-[node name="Estado" type="Label" parent="VBoxContainer"]
+[node name="Pregunta" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "No tienes cuenta ?"
