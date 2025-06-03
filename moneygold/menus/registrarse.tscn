@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpdfdhhm0ruxa"]
+
+[ext_resource type="Script" uid="uid://b4gttsj8ucmf0" path="res://menus/script/registrarse.gd" id="1_bjmju"]
+[ext_resource type="Texture2D" uid="uid://cd52oqbhqi5id" path="res://assets/images/fondo.png" id="2_0nq67"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swy65"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Registrarse" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bjmju")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -188.0
+offset_right = 192.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0nq67")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = 2.0
+offset_right = 263.0
+offset_bottom = 279.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Estado" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nombre" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Nombre"
+
+[node name="Usuario" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Usuario"
+
+[node name="Contraseña" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Contraseña"
+
+[node name="Registrarse" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_swy65")
+text = "Registrarse"
+
+[connection signal="pressed" from="VBoxContainer/Registrarse" to="." method="_on_registrarse_pressed"]

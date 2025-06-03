@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://cyen1pd7e8l8l"]
+
+[ext_resource type="Texture2D" uid="uid://dsppmco8ncei1" path="res://assets/images/higherDice/d1.png" id="1_lnstd"]
+[ext_resource type="Texture2D" uid="uid://d2r3htal056i6" path="res://assets/images/higherDice/d2.png" id="2_or8fw"]
+[ext_resource type="Texture2D" uid="uid://cqiy3obliw15d" path="res://assets/images/higherDice/d3.png" id="3_dyjwx"]
+[ext_resource type="Texture2D" uid="uid://wtqu7khgbut" path="res://assets/images/higherDice/d4.png" id="4_jw2dn"]
+[ext_resource type="Texture2D" uid="uid://dev54exsyygq8" path="res://assets/images/higherDice/d5.png" id="5_bdy2n"]
+[ext_resource type="Texture2D" uid="uid://dx2iilfvbsrjg" path="res://assets/images/higherDice/d6.png" id="6_ccfap"]
+[ext_resource type="Script" uid="uid://csy616tqxocg0" path="res://juegos/script/dado.gd" id="7_jf1tk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dx3d6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lnstd")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_or8fw")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dyjwx")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jw2dn")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bdy2n")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ccfap")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}]
+
+[node name="dado" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_dx3d6")
+animation = &"1"
+script = ExtResource("7_jf1tk")

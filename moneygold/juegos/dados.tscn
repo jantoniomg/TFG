@@ -1,13 +1,91 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnfkaghkr6qw5"]
+[gd_scene load_steps=8 format=3 uid="uid://bnfkaghkr6qw5"]
 
+[ext_resource type="Script" uid="uid://b4ym43g8cspim" path="res://juegos/script/dados.gd" id="1_bsmqf"]
 [ext_resource type="Texture2D" uid="uid://xb1qfgowgm7n" path="res://assets/images/blackjack/table.jpg" id="1_nk8gd"]
 [ext_resource type="PackedScene" uid="uid://b0uopuis0h0pe" path="res://header y footer/header.tscn" id="2_exwbs"]
+[ext_resource type="PackedScene" uid="uid://b0sqdyjua5dmr" path="res://header y footer/footer.tscn" id="3_exwbs"]
+[ext_resource type="PackedScene" uid="uid://cyen1pd7e8l8l" path="res://juegos/dado.tscn" id="4_b2qjx"]
 
-[node name="Tragaperras" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ap7m3"]
+bg_color = Color(0.435294, 0.211765, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3qvb"]
+bg_color = Color(0.435294, 0.211765, 0, 1)
+
+[node name="HigherDice" type="Node2D"]
+script = ExtResource("1_bsmqf")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 768.0
 texture = ExtResource("1_nk8gd")
 
 [node name="Header" parent="." instance=ExtResource("2_exwbs")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = 208.0
+offset_right = 416.0
+offset_bottom = 449.0
+grow_vertical = 2
+
+[node name="casa" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ap7m3")
+text = "Casa"
+horizontal_alignment = 1
+
+[node name="dadoCasa1" parent="ColorRect" instance=ExtResource("4_b2qjx")]
+position = Vector2(184, 160)
+scale = Vector2(0.5, 0.5)
+
+[node name="dadoCasa2" parent="ColorRect" instance=ExtResource("4_b2qjx")]
+position = Vector2(104, 112)
+scale = Vector2(0.5, 0.5)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 744.0
+offset_top = 208.0
+offset_right = 1032.0
+offset_bottom = 449.0
+grow_vertical = 2
+
+[node name="jugador" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_k3qvb")
+text = "Jugador"
+horizontal_alignment = 1
+
+[node name="dadoJugador1" parent="ColorRect2" instance=ExtResource("4_b2qjx")]
+position = Vector2(184, 160)
+scale = Vector2(0.5, 0.5)
+
+[node name="dadoJugador2" parent="ColorRect2" instance=ExtResource("4_b2qjx")]
+position = Vector2(104, 112)
+scale = Vector2(0.5, 0.5)
+
+[node name="jugar" type="Button" parent="."]
+offset_left = 512.0
+offset_top = 400.0
+offset_right = 640.0
+offset_bottom = 450.0
+theme_override_font_sizes/font_size = 30
+text = "Jugar"
+
+[node name="footer" parent="." groups=["footer"] instance=ExtResource("3_exwbs")]
+
+[connection signal="pressed" from="jugar" to="." method="_on_jugar_pressed"]

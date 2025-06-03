@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvb26atjckwlq"]
+[gd_scene load_steps=8 format=3 uid="uid://cvb26atjckwlq"]
 
-[ext_resource type="Script" path="res://addons/godot-firebase/database/database.gd" id="1"]
-[ext_resource type="Script" path="res://addons/godot-firebase/firestore/firestore.gd" id="2"]
-[ext_resource type="Script" path="res://addons/godot-firebase/firebase/firebase.gd" id="3"]
-[ext_resource type="Script" path="res://addons/godot-firebase/auth/auth.gd" id="4"]
-[ext_resource type="Script" path="res://addons/godot-firebase/storage/storage.gd" id="5"]
-[ext_resource type="Script" path="res://addons/godot-firebase/dynamiclinks/dynamiclinks.gd" id="6"]
-[ext_resource type="Script" path="res://addons/godot-firebase/functions/functions.gd" id="7"]
-[ext_resource type="PackedScene" uid="uid://5xa6ulbllkjk" path="res://addons/godot-firebase/remote_config/firebase_remote_config.tscn" id="8_mvdf4"]
+[ext_resource type="Script" uid="uid://c4fsf6kjip6ml" path="res://addons/godot-firebase/database/database.gd" id="1"]
+[ext_resource type="Script" uid="uid://c1nlfp4ek81js" path="res://addons/godot-firebase/firestore/firestore.gd" id="2"]
+[ext_resource type="Script" uid="uid://b7ersmaj6dq7f" path="res://addons/godot-firebase/firebase/firebase.gd" id="3"]
+[ext_resource type="Script" uid="uid://d3mb20qv888fj" path="res://addons/godot-firebase/auth/auth.gd" id="4"]
+[ext_resource type="Script" uid="uid://bf60fp3uwrpc" path="res://addons/godot-firebase/storage/storage.gd" id="5"]
+[ext_resource type="Script" uid="uid://ch0tg8f4nyyx7" path="res://addons/godot-firebase/dynamiclinks/dynamiclinks.gd" id="6"]
+[ext_resource type="Script" uid="uid://cf4appngvcyq0" path="res://addons/godot-firebase/functions/functions.gd" id="7"]
 
 [node name="Firebase" type="Node"]
 script = ExtResource("3")
@@ -31,6 +30,3 @@ script = ExtResource("6")
 
 [node name="Functions" type="Node" parent="."]
 script = ExtResource("7")
-
-[node name="RemoteConfig" parent="." instance=ExtResource("8_mvdf4")]
-accept_gzip = false

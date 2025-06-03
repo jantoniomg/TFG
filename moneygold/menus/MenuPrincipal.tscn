@@ -60,6 +60,12 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_851n0")
 text = "JUGAR"
 
+[node name="banco" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_t5vlk")
+text = "BANCO"
+
 [node name="opciones" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -73,5 +79,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_srnkm")
 text = "SALIR"
 
 [connection signal="pressed" from="VBoxContainer/jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/banco" to="." method="_on_banco_pressed"]
 [connection signal="pressed" from="VBoxContainer/opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="VBoxContainer/salir" to="." method="_on_salir_pressed"]

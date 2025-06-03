@@ -11,42 +11,42 @@ offset_right = 1152.0
 offset_bottom = 647.0
 color = Color(0, 0.352941, 0.105882, 0.619608)
 
-[node name="Button" type="Button" parent="."]
+[node name="apuesta1" type="Button" parent="."]
 offset_left = 108.0
 offset_top = 560.0
 offset_right = 197.0
 offset_bottom = 612.0
 text = "50"
 
-[node name="Button2" type="Button" parent="."]
+[node name="apuesta2" type="Button" parent="."]
 offset_left = 268.0
 offset_top = 560.0
 offset_right = 357.0
 offset_bottom = 612.0
 text = "100"
 
-[node name="Button3" type="Button" parent="."]
+[node name="apuesta3" type="Button" parent="."]
 offset_left = 428.0
 offset_top = 560.0
 offset_right = 517.0
 offset_bottom = 612.0
 text = "150"
 
-[node name="Button4" type="Button" parent="."]
+[node name="apuesta4" type="Button" parent="."]
 offset_left = 596.0
 offset_top = 560.0
 offset_right = 685.0
 offset_bottom = 612.0
 text = "200"
 
-[node name="Button5" type="Button" parent="."]
+[node name="apuesta5" type="Button" parent="."]
 offset_left = 756.0
 offset_top = 560.0
 offset_right = 845.0
 offset_bottom = 612.0
 text = "250"
 
-[node name="Button6" type="Button" parent="."]
+[node name="apuesta6" type="Button" parent="."]
 offset_left = 908.0
 offset_top = 560.0
 offset_right = 997.0
