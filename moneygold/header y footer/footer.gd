@@ -17,20 +17,43 @@ func _ready() -> void:
 		if child is Button:
 			child.pressed.connect(_on_any_button_pressed.bind(child.name))
 	update_botones_disponibles()
+	CargarDatos.dinero_updated.connect(update_botones_disponibles)
 
 func update_botones_disponibles() -> void:
 	var dinero_disponible = CargarDatos.dineroFisico
+	var seleccionado_aun_valido := false
 
 	for child in get_children():
 		if child is Button:
 			var btn_name = child.name.strip_edges()
+			var valor = valores_apuestas.get(btn_name, 0)
+
 			if btn_name == "apuesta6":
 				child.disabled = dinero_disponible <= 0
 			else:
-				var valor = valores_apuestas.get(btn_name, 0)
 				child.disabled = dinero_disponible < valor
 
+			# Verificar si el botón seleccionado aún es válido
+			if btn_name == CargarDatos.apuestaBotonSeleccionado and not child.disabled:
+				seleccionado_aun_valido = true
+
+	# Si el botón seleccionado ya no es válido, deseleccionarlo visualmente y lógicamente
+	if not seleccionado_aun_valido:
+		for child in get_children():
+			if child is Button:
+				child.add_theme_color_override("font_color", color_not_selected)
+				child.add_theme_color_override("font_focus_color", color_not_selected)
+				child.add_theme_color_override("font_hover_color", color_not_selected)
+
+		CargarDatos.apuestaBotonSeleccionado = ""
+		CargarDatos.apuestaActual = 0
+
+
 func _on_any_button_pressed(btn_name: String) -> void:
+	if CargarDatos.dineroFisico <= 0:
+		print("⚠ No puedes apostar con 0 dinero.")
+		return
+
 	var boton_presionado = get_node(btn_name) as Button
 	if boton_presionado.disabled:
 		return
@@ -42,10 +65,17 @@ func _on_any_button_pressed(btn_name: String) -> void:
 			child.add_theme_color_override("font_focus_color", color_selected if is_selected else color_not_selected)
 			child.add_theme_color_override("font_hover_color", color_selected if is_selected else color_not_selected)
 
-	match btn_name:
-		"All in":
-			CargarDatos.apuestaActual = CargarDatos.dineroFisico
-		_:
-			var valor = valores_apuestas.get(btn_name, 0)
-			CargarDatos.apuestaActual = valor
+	if btn_name == "apuesta6":
+		if CargarDatos.dineroFisico <= 0:
+			print("⚠ No puedes hacer All in con 0 dinero.")
+			return
+		CargarDatos.apuestaActual = CargarDatos.dineroFisico
+	else:
+		var valor = valores_apuestas.get(btn_name, 0)
+		if CargarDatos.dineroFisico < valor:
+			print("⚠ No tienes suficiente dinero para esta apuesta.")
+			return
+		CargarDatos.apuestaActual = valor
+
+
 	CargarDatos.apuestaBotonSeleccionado = btn_name

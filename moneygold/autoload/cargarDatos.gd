@@ -22,6 +22,12 @@ func dinero_setter(new_value):
 	dineroFisico = new_value
 	emit_signal("dinero_updated", dineroFisico)
 
+	# Reseteamos la apuesta si ya no hay dinero
+	if dineroFisico <= 0:
+		apuestaActual = 0
+		apuestaBotonSeleccionado = ""
+		emit_signal("apuesta_actualizada", 0)
+
 func banco_setter(new_value):
 	dineroBanco = new_value
 	emit_signal("banco_updated")
