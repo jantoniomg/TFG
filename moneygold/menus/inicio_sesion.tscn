@@ -63,6 +63,7 @@ placeholder_text = "Usuario"
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Contraseña"
+secret = true
 
 [node name="Iniciar sesion" type="Button" parent="VBoxContainer"]
 layout_mode = 2

@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpdfdhhm0ruxa"]
+[gd_scene load_steps=5 format=3 uid="uid://cpdfdhhm0ruxa"]
 
 [ext_resource type="Script" uid="uid://b4gttsj8ucmf0" path="res://menus/script/registrarse.gd" id="1_bjmju"]
 [ext_resource type="Texture2D" uid="uid://cd52oqbhqi5id" path="res://assets/images/fondo.png" id="2_0nq67"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swy65"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjmju"]
 bg_color = Color(0, 0, 0, 1)
 
 [node name="Registrarse" type="Control"]
@@ -59,12 +62,13 @@ placeholder_text = "Nombre"
 [node name="Usuario" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-placeholder_text = "Usuario"
+placeholder_text = "Email"
 
 [node name="Contraseña" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 placeholder_text = "Contraseña"
+secret = true
 
 [node name="Registrarse" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -72,4 +76,11 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_swy65")
 text = "Registrarse"
 
+[node name="atras" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjmju")
+text = "ATRAS"
+
 [connection signal="pressed" from="VBoxContainer/Registrarse" to="." method="_on_registrarse_pressed"]
+[connection signal="pressed" from="VBoxContainer/atras" to="." method="_on_atras_pressed"]

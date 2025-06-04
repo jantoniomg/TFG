@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://xb1qfgowgm7n" path="res://assets/images/blackjack/table.jpg" id="1_nk8gd"]
 [ext_resource type="PackedScene" uid="uid://b0uopuis0h0pe" path="res://header y footer/header.tscn" id="2_exwbs"]
 [ext_resource type="PackedScene" uid="uid://b0sqdyjua5dmr" path="res://header y footer/footer.tscn" id="3_exwbs"]
-[ext_resource type="PackedScene" uid="uid://cyen1pd7e8l8l" path="res://juegos/dado.tscn" id="4_b2qjx"]
+[ext_resource type="PackedScene" uid="uid://cyen1pd7e8l8l" path="res://juegos/escenasOanimaciones/dado.tscn" id="4_b2qjx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ap7m3"]
 bg_color = Color(0.435294, 0.211765, 0, 1)

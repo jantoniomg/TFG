@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://dkfk3p6jimxia"]
+
+[ext_resource type="Script" uid="uid://bf1o2qwc81eme" path="res://juegos/script/slotmachine.gd" id="1_gklv3"]
+[ext_resource type="Texture2D" uid="uid://xb1qfgowgm7n" path="res://assets/images/blackjack/table.jpg" id="2_al0ko"]
+[ext_resource type="PackedScene" uid="uid://b0uopuis0h0pe" path="res://header y footer/header.tscn" id="3_u8cus"]
+[ext_resource type="PackedScene" uid="uid://b0sqdyjua5dmr" path="res://header y footer/footer.tscn" id="4_rchxh"]
+[ext_resource type="Texture2D" uid="uid://cxlq4x2c01228" path="res://assets/images/slotMachine/slotmachine.png" id="5_al0ko"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al0ko"]
+atlas = ExtResource("5_al0ko")
+region = Rect2(245, 70, 35, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8cus"]
+atlas = ExtResource("5_al0ko")
+region = Rect2(245, 140, 35, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rchxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al0ko")
+}],
+"loop": false,
+"name": &"reposo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8cus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al0ko")
+}],
+"loop": false,
+"name": &"tirar",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6m4qk"]
+radius = 10.6703
+
+[node name="slotmachine" type="Node2D"]
+script = ExtResource("1_gklv3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("2_al0ko")
+
+[node name="Header" parent="." instance=ExtResource("3_u8cus")]
+
+[node name="SlotMachine" type="Sprite2D" parent="."]
+position = Vector2(566, 335)
+scale = Vector2(1.4671, 1.44758)
+texture = ExtResource("5_al0ko")
+region_enabled = true
+region_rect = Rect2(64, 32, 152, 248)
+
+[node name="animacionPalanca" type="AnimatedSprite2D" parent="."]
+position = Vector2(671, 327)
+scale = Vector2(1.94286, 1.82857)
+sprite_frames = SubResource("SpriteFrames_rchxh")
+animation = &"reposo"
+
+[node name="palanca" type="Area2D" parent="."]
+position = Vector2(671, 327)
+scale = Vector2(1.94286, 1.82857)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="palanca"]
+position = Vector2(6.69118, -19.1406)
+shape = SubResource("CircleShape2D_6m4qk")
+
+[node name="footer" parent="." instance=ExtResource("4_rchxh")]
+
+[connection signal="input_event" from="palanca" to="." method="_on_palanca_input_event"]

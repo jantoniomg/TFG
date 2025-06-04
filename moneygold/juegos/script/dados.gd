@@ -28,7 +28,7 @@ func _on_jugar_pressed() -> void:
 		print("⚠ No has seleccionado una apuesta.")
 		return
 
-	apuesta_utilizada = CargarDatos.apuestaActual  # 👈 usamos la variable global
+	apuesta_utilizada = CargarDatos.apuestaActual
 	CargarDatos.dineroFisico -= apuesta_utilizada
 	await CargarDatos.guardar_datos_en_firestore()
 
@@ -60,7 +60,7 @@ func _on_dado_resultado(origen: String, valor: int) -> void:
 		print("🏠 Casa sacó:", resultados_casa, "Total:", total_casa)
 
 		if total_jugador > total_casa:
-			CargarDatos.dineroFisico += apuesta_utilizada * 2  # 👈 sin redeclarar
+			CargarDatos.dineroFisico += apuesta_utilizada * 2 
 			await CargarDatos.guardar_datos_en_firestore()
 		else:
 			print("💀 Perdiste.")

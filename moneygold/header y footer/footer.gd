@@ -33,11 +33,9 @@ func update_botones_disponibles() -> void:
 			else:
 				child.disabled = dinero_disponible < valor
 
-			# Verificar si el botón seleccionado aún es válido
 			if btn_name == CargarDatos.apuestaBotonSeleccionado and not child.disabled:
 				seleccionado_aun_valido = true
 
-	# Si el botón seleccionado ya no es válido, deseleccionarlo visualmente y lógicamente
 	if not seleccionado_aun_valido:
 		for child in get_children():
 			if child is Button:
@@ -76,6 +74,4 @@ func _on_any_button_pressed(btn_name: String) -> void:
 			print("⚠ No tienes suficiente dinero para esta apuesta.")
 			return
 		CargarDatos.apuestaActual = valor
-
-
 	CargarDatos.apuestaBotonSeleccionado = btn_name

@@ -5,9 +5,7 @@ extends Node2D
 @onready var nombre_label: Label = $Nombre         
 @onready var foto_perfil: TextureRect = $FotoPerfil 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Mostrar valores actuales
 	dineroF_label.text = str(CargarDatos.dineroFisico)
 	dineroB_label.text = str(CargarDatos.dineroBanco)
 	nombre_label.text = CargarDatos.nombreJugador

@@ -11,7 +11,7 @@ var caras: int
 var cuentaCaras: int = 0
 
 func _ready():
-	pass # No tiramos al iniciar; lo controlará el juego
+	pass
 
 func tirar():
 	cuentaCaras = 0
