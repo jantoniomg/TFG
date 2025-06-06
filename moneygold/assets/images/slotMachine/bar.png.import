@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj7u6x4mwpex0"
-path="res://.godot/imported/cardBack_green1.png-daf470e2f1ed3a4c396f8a2d0cd84a84.ctex"
+uid="uid://csp2vc70tyj83"
+path="res://.godot/imported/bar.png-81b369024f084c463b328221a2bc255e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/blackjack/cardBack_green1.png"
-dest_files=["res://.godot/imported/cardBack_green1.png-daf470e2f1ed3a4c396f8a2d0cd84a84.ctex"]
+source_file="res://assets/images/slotMachine/bar.png"
+dest_files=["res://.godot/imported/bar.png-81b369024f084c463b328221a2bc255e.ctex"]
 
 [params]
 

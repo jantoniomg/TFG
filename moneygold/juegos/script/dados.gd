@@ -4,11 +4,12 @@ var resultados_jugador: Array[int] = []
 var resultados_casa: Array[int] = []
 var total_dados_recibidos := 0
 var apuesta_utilizada: int = 0  
-
+@onready var nombre_label: Label = $ColorRect2/jugador   
 @onready var dados_jugador = [$ColorRect2/dadoJugador1, $ColorRect2/dadoJugador2]
 @onready var dados_casa = [$ColorRect/dadoCasa1, $ColorRect/dadoCasa2]
 
 func _ready():
+	nombre_label.text = CargarDatos.nombreJugador
 	$jugar.disabled = true
 	for dado in dados_jugador + dados_casa:
 		dado.resultado_final.connect(_on_dado_resultado)

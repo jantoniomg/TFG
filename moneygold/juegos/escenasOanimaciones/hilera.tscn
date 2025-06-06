@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://boj6nipplevun"]
+
+[ext_resource type="Script" uid="uid://bisb5186rj3al" path="res://juegos/script/hilera.gd" id="1_mj5kv"]
+[ext_resource type="PackedScene" uid="uid://bvpojjfv7urqx" path="res://juegos/escenasOanimaciones/tarjeta.tscn" id="2_5ormq"]
+
+[node name="hilera" type="Node2D"]
+script = ExtResource("1_mj5kv")
+
+[node name="tarjeta" parent="." instance=ExtResource("2_5ormq")]

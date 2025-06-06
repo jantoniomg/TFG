@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkfk3p6jimxia"]
+[gd_scene load_steps=11 format=3 uid="uid://dkfk3p6jimxia"]
 
 [ext_resource type="Script" uid="uid://bf1o2qwc81eme" path="res://juegos/script/slotmachine.gd" id="1_gklv3"]
 [ext_resource type="Texture2D" uid="uid://xb1qfgowgm7n" path="res://assets/images/blackjack/table.jpg" id="2_al0ko"]
 [ext_resource type="PackedScene" uid="uid://b0uopuis0h0pe" path="res://header y footer/header.tscn" id="3_u8cus"]
 [ext_resource type="PackedScene" uid="uid://b0sqdyjua5dmr" path="res://header y footer/footer.tscn" id="4_rchxh"]
 [ext_resource type="Texture2D" uid="uid://cxlq4x2c01228" path="res://assets/images/slotMachine/slotmachine.png" id="5_al0ko"]
+[ext_resource type="PackedScene" uid="uid://boj6nipplevun" path="res://juegos/escenasOanimaciones/hilera.tscn" id="6_u8cus"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_al0ko"]
 atlas = ExtResource("5_al0ko")
@@ -50,26 +51,45 @@ texture = ExtResource("2_al0ko")
 
 [node name="Header" parent="." instance=ExtResource("3_u8cus")]
 
-[node name="SlotMachine" type="Sprite2D" parent="."]
-position = Vector2(566, 335)
-scale = Vector2(1.4671, 1.44758)
+[node name="SlotMachine6" type="Sprite2D" parent="."]
+position = Vector2(568.355, 330.972)
+scale = Vector2(1.47393, 1.47301)
 texture = ExtResource("5_al0ko")
 region_enabled = true
-region_rect = Rect2(64, 32, 152, 248)
+region_rect = Rect2(64, 24, 152, 256)
 
 [node name="animacionPalanca" type="AnimatedSprite2D" parent="."]
-position = Vector2(671, 327)
+position = Vector2(673, 327)
 scale = Vector2(1.94286, 1.82857)
 sprite_frames = SubResource("SpriteFrames_rchxh")
 animation = &"reposo"
 
 [node name="palanca" type="Area2D" parent="."]
-position = Vector2(671, 327)
+position = Vector2(672, 328)
 scale = Vector2(1.94286, 1.82857)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="palanca"]
-position = Vector2(6.69118, -19.1406)
+position = Vector2(7.20589, -19.1406)
 shape = SubResource("CircleShape2D_6m4qk")
+
+[node name="mascara" type="ColorRect" parent="."]
+clip_children = 1
+offset_left = 493.0
+offset_top = 262.0
+offset_right = 642.0
+offset_bottom = 365.0
+
+[node name="hilera" parent="mascara" instance=ExtResource("6_u8cus")]
+position = Vector2(19, 46)
+scale = Vector2(0.825807, 1.31603)
+
+[node name="hilera2" parent="mascara" instance=ExtResource("6_u8cus")]
+position = Vector2(73, 47)
+scale = Vector2(0.825807, 1.31603)
+
+[node name="hilera3" parent="mascara" instance=ExtResource("6_u8cus")]
+position = Vector2(123, 46)
+scale = Vector2(0.825807, 1.31603)
 
 [node name="footer" parent="." instance=ExtResource("4_rchxh")]
 

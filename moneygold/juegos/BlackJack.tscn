@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://kaptf6p4ry0i"]
+[gd_scene load_steps=5 format=3 uid="uid://kaptf6p4ry0i"]
 
+[ext_resource type="Script" uid="uid://dhms5af106oym" path="res://juegos/script/black_jack.gd" id="1_521mu"]
 [ext_resource type="Texture2D" uid="uid://xb1qfgowgm7n" path="res://assets/images/blackjack/table.jpg" id="1_qxryc"]
 [ext_resource type="PackedScene" uid="uid://b0uopuis0h0pe" path="res://header y footer/header.tscn" id="2_xu3j1"]
+[ext_resource type="PackedScene" uid="uid://b0sqdyjua5dmr" path="res://header y footer/footer.tscn" id="4_bmc7r"]
 
 [node name="BlackJack" type="Node2D"]
+script = ExtResource("1_521mu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1152.0
@@ -11,3 +14,56 @@ offset_bottom = 648.0
 texture = ExtResource("1_qxryc")
 
 [node name="Header" parent="." instance=ExtResource("2_xu3j1")]
+
+[node name="Pedir" type="Button" parent="."]
+offset_left = 960.0
+offset_top = 344.0
+offset_right = 1088.0
+offset_bottom = 384.0
+text = "PEDIR"
+
+[node name="Pasar" type="Button" parent="."]
+offset_left = 960.0
+offset_top = 408.0
+offset_right = 1088.0
+offset_bottom = 448.0
+text = "PASAR"
+
+[node name="Jugar" type="Button" parent="."]
+offset_left = 480.0
+offset_top = 384.0
+offset_right = 608.0
+offset_bottom = 424.0
+text = "JUGAR"
+
+[node name="Reiniciar" type="Button" parent="."]
+offset_left = 960.0
+offset_top = 280.0
+offset_right = 1088.0
+offset_bottom = 320.0
+text = "Reiniciar"
+
+[node name="Resultado" type="Label" parent="."]
+offset_left = 466.0
+offset_top = 134.0
+offset_right = 506.0
+offset_bottom = 157.0
+
+[node name="PuntosJugador" type="Label" parent="."]
+offset_left = 720.0
+offset_top = 136.0
+offset_right = 760.0
+offset_bottom = 159.0
+
+[node name="PuntosCrupier" type="Label" parent="."]
+offset_left = 808.0
+offset_top = 136.0
+offset_right = 848.0
+offset_bottom = 159.0
+
+[node name="footer" parent="." instance=ExtResource("4_bmc7r")]
+
+[connection signal="pressed" from="Pedir" to="." method="_on_pedir_pressed"]
+[connection signal="pressed" from="Pasar" to="." method="_on_pasar_pressed"]
+[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Reiniciar" to="." method="_on_reiniciar_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgrhpkbe4a3lb"]
+
+[ext_resource type="Script" uid="uid://bta7j0kqxvo47" path="res://juegos/script/carta.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c26xgyes66j3g" path="res://assets/images/blackjack/reverso.png" id="2"]
+
+[node name="carta" type="Node2D"]
+script = ExtResource("1")
+
+[node name="ImagenCarta" type="TextureButton" parent="."]
+offset_top = 224.0
+offset_right = 40.0
+offset_bottom = 264.0
+toggle_mode = true
+texture_disabled = ExtResource("2")
+
+[connection signal="pressed" from="ImagenCarta" to="." method="_on_Texture_pressed"]

@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://bvpojjfv7urqx"]
+
+[ext_resource type="Texture2D" uid="uid://cxlq4x2c01228" path="res://assets/images/slotMachine/slotmachine.png" id="1_15nbq"]
+[ext_resource type="Script" uid="uid://m54b0htyusg7" path="res://juegos/script/tarjeta.gd" id="1_c7ypa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c83r4"]
+size = Vector2(41, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l22t5"]
+atlas = ExtResource("1_15nbq")
+region = Rect2(0, 210, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uog4t"]
+atlas = ExtResource("1_15nbq")
+region = Rect2(0, 175, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrrku"]
+atlas = ExtResource("1_15nbq")
+region = Rect2(0, 140, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63jxl"]
+atlas = ExtResource("1_15nbq")
+region = Rect2(0, 105, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gprr4"]
+atlas = ExtResource("1_15nbq")
+region = Rect2(0, 70, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6ooh"]
+atlas = ExtResource("1_15nbq")
+region = Rect2(0, 0, 35, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jno6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l22t5")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uog4t")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrrku")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63jxl")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gprr4")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6ooh")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}]
+
+[node name="tarjeta" type="Area2D"]
+script = ExtResource("1_c7ypa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 3.5)
+shape = SubResource("RectangleShape2D_c83r4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 4)
+scale = Vector2(1.14286, 1.14286)
+sprite_frames = SubResource("SpriteFrames_jno6q")
+animation = &"5"
