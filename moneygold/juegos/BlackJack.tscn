@@ -43,12 +43,6 @@ offset_right = 1088.0
 offset_bottom = 320.0
 text = "Reiniciar"
 
-[node name="Resultado" type="Label" parent="."]
-offset_left = 466.0
-offset_top = 134.0
-offset_right = 506.0
-offset_bottom = 157.0
-
 [node name="PuntosJugador" type="Label" parent="."]
 offset_left = 720.0
 offset_top = 136.0

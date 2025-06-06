@@ -13,7 +13,7 @@ config_version=5
 config/name="MoneyGold"
 run/main_scene="uid://dumc8r1i2fo8v"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://ddlhfbrgbcnun"
 
 [autoload]
 
@@ -23,6 +23,10 @@ Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")
+
+[gui]
+
+theme/custom_font="uid://bqavydwlqttm2"
 
 [input]
 

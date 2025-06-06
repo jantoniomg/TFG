@@ -10,7 +10,7 @@ script = ExtResource("1_5et6c")
 offset_top = 520.0
 offset_right = 1152.0
 offset_bottom = 647.0
-color = Color(0, 0.352941, 0.105882, 0.619608)
+color = Color(0, 0.352941, 0.105882, 1)
 
 [node name="apuesta1" type="Button" parent="."]
 offset_left = 108.0

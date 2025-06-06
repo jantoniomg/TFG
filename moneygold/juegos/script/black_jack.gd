@@ -16,6 +16,7 @@ var puntos_crupier : int = 0
 var apuesta_utilizada: int = 0
 
 func _ready():
+	apuesta_utilizada = CargarDatos.apuestaActual
 	CargarDatos.apuesta_actualizada.connect(_on_apuesta_actualizada)
 	CargarDatos.dinero_updated.connect(_on_dinero_actualizado)
 
@@ -39,7 +40,6 @@ func resetear_juego_variables():
 	puntos_jugador = 0
 	puntos_crupier = 0
 	cartas_crupier.clear()
-	$Resultado.text = ""
 	actualizar_puntos()
 
 func inicializar_baraja():
@@ -120,19 +120,16 @@ func obtener_siguiente_carta() -> Node:
 	return carta
 
 func ganar():
-	$Resultado.text = "🎉 ¡Ganaste!"
 	CargarDatos.dineroFisico += apuesta_utilizada * 2
 	await CargarDatos.guardar_datos_en_firestore()
 	ocultar_botones()
 	mostrar_boton_reiniciar()
 
 func perder():
-	$Resultado.text = "💥 Perdiste"
 	ocultar_botones()
 	mostrar_boton_reiniciar()
 
 func empate():
-	$Resultado.text = "🤝 Empate"
 	ocultar_botones()
 	mostrar_boton_reiniciar()
 
@@ -191,6 +188,7 @@ func _on_pasar_pressed() -> void:
 func mostrar_boton_reiniciar():
 		$Reiniciar.visible = true
 		$Jugar.disabled = true
+		$Jugar.visible = false
 
 func _on_reiniciar_pressed() -> void:
 	reiniciar_juego()
@@ -210,7 +208,6 @@ func reiniciar_juego():
 	puntos_jugador = 0
 	puntos_crupier = 0
 
-	$Resultado.text = ""
 	$PuntosJugador.text = CargarDatos.nombreJugador + ": 0" 
 	$PuntosCrupier.text = "Crupier: ¿?"
 	inicializar_baraja()

@@ -4,13 +4,31 @@
 [ext_resource type="Texture2D" uid="uid://cd52oqbhqi5id" path="res://assets/images/fondo.png" id="2_230bq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3qxo"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.47451, 0.266667, 0.0705882, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.960784, 0.678431, 0.235294, 1)
+border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxrmr"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.47451, 0.266667, 0.0705882, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.960784, 0.678431, 0.235294, 1)
+border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7dcr"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.47451, 0.266667, 0.0705882, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.960784, 0.678431, 0.235294, 1)
+border_blend = true
 
 [node name="MenuJuegos" type="Control"]
 layout_mode = 3
@@ -20,6 +38,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_230bq")
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

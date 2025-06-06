@@ -6,9 +6,6 @@ extends Control
 @onready var cantidad: LineEdit = $Cantidad
 
 func _ready() -> void:
-	$sacarDinero.pressed.connect(_on_sacar_dinero_pressed)
-	$ingresar.pressed.connect(_on_ingresar_pressed)
-	$Atras.pressed.connect(_on_atras_pressed)
 	actualizar_valores()
 
 func _on_sacar_dinero_pressed() -> void:

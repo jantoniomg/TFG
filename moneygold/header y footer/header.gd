@@ -2,8 +2,7 @@ extends Node2D
 
 @onready var dineroF_label: Label = $dineroF     
 @onready var dineroB_label: Label = $dineroB     
-@onready var nombre_label: Label = $Nombre         
-@onready var foto_perfil: TextureRect = $FotoPerfil 
+@onready var nombre_label: Label = $Nombre
 
 func _ready() -> void:
 	dineroF_label.text = str(CargarDatos.dineroFisico)
