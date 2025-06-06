@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dymptdgqn1fcx" path="res://menus/script/menu_juegos.gd" id="1_2rpal"]
 [ext_resource type="Texture2D" uid="uid://cywjverrs8hg2" path="res://assets/images/foto_Ruleta.jpeg" id="1_7oyay"]
-[ext_resource type="Texture2D" path="res://icon.svg" id="1_fgk0e"]
+[ext_resource type="Texture2D" uid="uid://dar03ux8vxsfh" path="res://icon.svg" id="1_fgk0e"]
 [ext_resource type="Texture2D" uid="uid://m8vtvpmnd6v8" path="res://assets/images/fondoMenuJuegos.jpg" id="2_lyeiu"]
 [ext_resource type="Texture2D" uid="uid://dgoyetg0hp144" path="res://assets/images/foto_BlackJack.jpeg" id="2_sluh0"]
 [ext_resource type="Texture2D" uid="uid://762bn44r4hkt" path="res://assets/images/foto_Tragaperras.jpeg" id="4_sluh0"]
