@@ -3,7 +3,7 @@ extends Control
 func _ready():
 	Firebase.Auth.login_succeeded.connect(on_iniciar_sesion_succeeded)
 	Firebase.Auth.login_failed.connect(on_iniciar_sesion_failed)
-
+	
 func _process(delta: float):
 	pass
 
@@ -31,13 +31,14 @@ func on_iniciar_sesion_succeeded(auth):
 	if document and document.doc_fields:
 		var datos_jugador = document.doc_fields
 		print("Datos del jugador:", datos_jugador)
-
-		CargarDatos.dineroFisico = datos_jugador.get("DineroFisico", 0)
+		
+		var dinero_actual = datos_jugador.get("DineroFisico", 0)
+		CargarDatos.dineroFisico = dinero_actual + 100
 		CargarDatos.dineroBanco = datos_jugador.get("DineroBanco", 0)
 		CargarDatos.nombreJugador = datos_jugador.get("Nombre", "")
 		CargarDatos.emailJugador = datos_jugador.get("Email", "")
 		CargarDatos.uid = uid
-
+		await CargarDatos.guardar_datos_en_firestore()
 		get_tree().change_scene_to_file("res://menus/MenuPrincipal.tscn")
 	else:
 		print("Error al obtener el documento:", finished_task.error)

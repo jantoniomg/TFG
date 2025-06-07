@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var animacion_palanca : AnimatedSprite2D = $animacionPalanca
-@onready var filas := [$mascara/hilera, $mascara/hilera2, $mascara/hilera3]
-var hileras_finalizadas := 0
+@onready var filas = [$mascara/hilera, $mascara/hilera2, $mascara/hilera3]
+var hileras_finalizadas = 0
 
 func _ready() -> void:
 	for fila in filas:
@@ -11,7 +11,7 @@ func _ready() -> void:
 func _on_hilera_giro_finalizado():
 	hileras_finalizadas += 1
 	if hileras_finalizadas == 3:
-		await get_tree().process_frame  # <- Espera a que se actualice la posición real
+		await get_tree().process_frame
 		detectar_resultado()
 
 func _on_palanca_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -27,7 +27,9 @@ func _on_palanca_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if CargarDatos.dineroFisico < apuesta:
 		print("❌ No tienes suficiente dinero.")
 		return
-
+	$palancaS.play()
+	$ganar.stop()
+	$perder.stop()
 	CargarDatos.dineroFisico -= apuesta
 	await CargarDatos.guardar_datos_en_firestore()
 	animacion_palanca.play("tirar")
@@ -49,10 +51,12 @@ func detectar_resultado():
 
 	if resultado[0] == resultado[1] and resultado[1] == resultado[2]:
 		print("🏆 ¡Has ganado con tres iguales!", resultado[0])
+		$ganar.play()
 	else:
+		$perder.play()
 		print("😢 No has ganado esta vez")
 
-	var frutas := {
+	var frutas = {
 		0: "Sandía",
 		1: "Limón",
 		2: "Uvas",

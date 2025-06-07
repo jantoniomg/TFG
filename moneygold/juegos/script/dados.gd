@@ -2,7 +2,7 @@ extends Node2D
 
 var resultados_jugador: Array[int] = []
 var resultados_casa: Array[int] = []
-var total_dados_recibidos := 0
+var total_dados_recibidos = 0
 var apuesta_utilizada: int = 0  
 @onready var nombre_label: Label = $ColorRect2/jugador   
 @onready var dados_jugador = [$ColorRect2/dadoJugador1, $ColorRect2/dadoJugador2]
@@ -29,6 +29,7 @@ func _on_jugar_pressed() -> void:
 		print("⚠ No has seleccionado una apuesta.")
 		return
 
+	$dado.play()
 	apuesta_utilizada = CargarDatos.apuestaActual
 	CargarDatos.dineroFisico -= apuesta_utilizada
 	await CargarDatos.guardar_datos_en_firestore()
@@ -42,8 +43,6 @@ func _on_jugar_pressed() -> void:
 
 	CargarDatos.apuestaBotonSeleccionado = ""
 	CargarDatos.apuestaActual = 0  
-
-
 
 func _on_dado_resultado(origen: String, valor: int) -> void:
 	total_dados_recibidos += 1
@@ -61,7 +60,9 @@ func _on_dado_resultado(origen: String, valor: int) -> void:
 		print("🏠 Casa sacó:", resultados_casa, "Total:", total_casa)
 
 		if total_jugador > total_casa:
+			$ganar.play()
 			CargarDatos.dineroFisico += apuesta_utilizada * 2 
 			await CargarDatos.guardar_datos_en_firestore()
 		else:
 			print("💀 Perdiste.")
+			$perder.play()

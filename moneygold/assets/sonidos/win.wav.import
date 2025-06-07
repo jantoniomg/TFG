@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c66xpr47stvmx"
-path="res://.godot/imported/win.wav-3aedec0302b0d22da51955976c2130df.sample"
+path="res://.godot/imported/win.wav-e5e0eb3c5cafd17fc4b3c0deb7f12c84.sample"
 
 [deps]
 
-source_file="res://assets/sonidos/blackjack/win.wav"
-dest_files=["res://.godot/imported/win.wav-3aedec0302b0d22da51955976c2130df.sample"]
+source_file="res://assets/sonidos/win.wav"
+dest_files=["res://.godot/imported/win.wav-e5e0eb3c5cafd17fc4b3c0deb7f12c84.sample"]
 
 [params]
 

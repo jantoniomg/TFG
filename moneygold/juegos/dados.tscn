@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnfkaghkr6qw5"]
+[gd_scene load_steps=11 format=3 uid="uid://bnfkaghkr6qw5"]
 
 [ext_resource type="Script" uid="uid://b4ym43g8cspim" path="res://juegos/script/dados.gd" id="1_bsmqf"]
 [ext_resource type="Texture2D" uid="uid://btx3abfyn81u1" path="res://assets/images/higherDice/fondoDados.png" id="2_b2qjx"]
 [ext_resource type="PackedScene" uid="uid://b0uopuis0h0pe" path="res://header y footer/header.tscn" id="2_exwbs"]
 [ext_resource type="PackedScene" uid="uid://b0sqdyjua5dmr" path="res://header y footer/footer.tscn" id="3_exwbs"]
 [ext_resource type="PackedScene" uid="uid://cyen1pd7e8l8l" path="res://juegos/escenasOanimaciones/dado.tscn" id="4_b2qjx"]
+[ext_resource type="AudioStream" uid="uid://c66xpr47stvmx" path="res://assets/sonidos/win.wav" id="6_p1h0p"]
+[ext_resource type="AudioStream" uid="uid://ditareyd7teqg" path="res://assets/sonidos/you_lose.wav" id="7_y8e2p"]
+[ext_resource type="AudioStream" uid="uid://27qonjr6co6k" path="res://assets/sonidos/higherdice/dado.mp3" id="8_8u6xq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ap7m3"]
 bg_color = Color(0.760784, 0.603922, 0.443137, 1)
@@ -16,7 +19,7 @@ border_color = Color(0.960784, 0.678431, 0.235294, 1)
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3qvb"]
-bg_color = Color(0.47451, 0.266667, 0.0705882, 1)
+bg_color = Color(0.760784, 0.603922, 0.443137, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -104,5 +107,14 @@ theme_override_font_sizes/font_size = 30
 text = "Jugar"
 
 [node name="footer" parent="." groups=["footer"] instance=ExtResource("3_exwbs")]
+
+[node name="ganar" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_p1h0p")
+
+[node name="perder" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_y8e2p")
+
+[node name="dado" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_8u6xq")
 
 [connection signal="pressed" from="jugar" to="." method="_on_jugar_pressed"]

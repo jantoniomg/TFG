@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://kaptf6p4ry0i"]
+[gd_scene load_steps=9 format=3 uid="uid://kaptf6p4ry0i"]
 
 [ext_resource type="Script" uid="uid://dhms5af106oym" path="res://juegos/script/black_jack.gd" id="1_521mu"]
 [ext_resource type="Texture2D" uid="uid://xb1qfgowgm7n" path="res://assets/images/blackjack/table.jpg" id="1_qxryc"]
 [ext_resource type="PackedScene" uid="uid://b0uopuis0h0pe" path="res://header y footer/header.tscn" id="2_xu3j1"]
 [ext_resource type="PackedScene" uid="uid://b0sqdyjua5dmr" path="res://header y footer/footer.tscn" id="4_bmc7r"]
+[ext_resource type="AudioStream" uid="uid://c66xpr47stvmx" path="res://assets/sonidos/win.wav" id="5_bmc7r"]
+[ext_resource type="AudioStream" uid="uid://ditareyd7teqg" path="res://assets/sonidos/you_lose.wav" id="6_1ium2"]
+[ext_resource type="AudioStream" uid="uid://pwif6qeewcxo" path="res://assets/sonidos/blackjack/card.wav" id="7_wths3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wths3"]
+bg_color = Color(0.47451, 0.266667, 0.0705882, 1)
 
 [node name="BlackJack" type="Node2D"]
 script = ExtResource("1_521mu")
@@ -44,18 +50,37 @@ offset_bottom = 320.0
 text = "Reiniciar"
 
 [node name="PuntosJugador" type="Label" parent="."]
-offset_left = 720.0
+offset_left = 640.0
 offset_top = 136.0
 offset_right = 760.0
-offset_bottom = 159.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0.960784, 0.678431, 0.235294, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_wths3")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PuntosCrupier" type="Label" parent="."]
 offset_left = 808.0
 offset_top = 136.0
-offset_right = 848.0
-offset_bottom = 159.0
+offset_right = 928.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0.960784, 0.678431, 0.235294, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_wths3")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="footer" parent="." instance=ExtResource("4_bmc7r")]
+
+[node name="ganar" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bmc7r")
+
+[node name="perder" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1ium2")
+
+[node name="carta" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_wths3")
 
 [connection signal="pressed" from="Pedir" to="." method="_on_pedir_pressed"]
 [connection signal="pressed" from="Pasar" to="." method="_on_pasar_pressed"]

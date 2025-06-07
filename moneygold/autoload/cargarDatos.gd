@@ -4,6 +4,9 @@ signal dinero_updated
 signal banco_updated
 signal apuesta_actualizada
 
+var jugador_logros: Array = []
+var logros_disponibles: Dictionary = {}
+
 var apuestaActual : int = 0 : set = set_apuestaActual
 var apuestaBotonSeleccionado : String = ""
 
@@ -30,6 +33,19 @@ func banco_setter(new_value):
 	dineroBanco = new_value
 	emit_signal("banco_updated")
 
+func cargar_logros():
+	var collection = Firebase.Firestore.collection("Logros")
+	var task = collection.get_all()
+	var resultado = await task.task_finished
+
+	if resultado.error == "":
+		for doc in resultado.documents:
+			logros_disponibles[doc.id] = doc.fields
+		print("✅ Logros cargados:", logros_disponibles.keys())
+	else:
+		print("❌ Error al cargar logros:", resultado.error)
+
+
 func guardar_datos_en_firestore():
 	if uid == "":
 		print("⚠ No hay UID para guardar los datos.")
@@ -39,7 +55,7 @@ func guardar_datos_en_firestore():
 		"DineroFisico": dineroFisico,
 		"DineroBanco": dineroBanco,
 		"Nombre": nombreJugador,
-		"Email": emailJugador
+		"Email": emailJugador,
 	}
 
 	var collection: FirestoreCollection = Firebase.Firestore.collection("Jugadores")

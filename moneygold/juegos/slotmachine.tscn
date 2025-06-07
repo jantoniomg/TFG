@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkfk3p6jimxia"]
+[gd_scene load_steps=15 format=3 uid="uid://dkfk3p6jimxia"]
 
 [ext_resource type="Script" uid="uid://bf1o2qwc81eme" path="res://juegos/script/slotmachine.gd" id="1_gklv3"]
-[ext_resource type="Texture2D" uid="uid://xb1qfgowgm7n" path="res://assets/images/blackjack/table.jpg" id="2_al0ko"]
+[ext_resource type="Texture2D" uid="uid://btx3abfyn81u1" path="res://assets/images/higherDice/fondoDados.png" id="2_l5701"]
+[ext_resource type="Texture2D" uid="uid://m8vtvpmnd6v8" path="res://assets/images/fondoMenuJuegos.jpg" id="3_e6uhk"]
 [ext_resource type="PackedScene" uid="uid://b0uopuis0h0pe" path="res://header y footer/header.tscn" id="3_u8cus"]
 [ext_resource type="PackedScene" uid="uid://b0sqdyjua5dmr" path="res://header y footer/footer.tscn" id="4_rchxh"]
 [ext_resource type="Texture2D" uid="uid://cxlq4x2c01228" path="res://assets/images/slotMachine/slotmachine.png" id="5_al0ko"]
 [ext_resource type="PackedScene" uid="uid://boj6nipplevun" path="res://juegos/escenasOanimaciones/hilera.tscn" id="6_u8cus"]
+[ext_resource type="AudioStream" uid="uid://c66xpr47stvmx" path="res://assets/sonidos/win.wav" id="7_l5701"]
+[ext_resource type="AudioStream" uid="uid://ditareyd7teqg" path="res://assets/sonidos/you_lose.wav" id="8_e6uhk"]
+[ext_resource type="AudioStream" uid="uid://d1lf05tlqa1bd" path="res://assets/sonidos/slotmachine/palanca.mp3" id="9_l5701"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_al0ko"]
 atlas = ExtResource("5_al0ko")
@@ -44,10 +48,21 @@ radius = 10.6703
 script = ExtResource("1_gklv3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = -152.0
+offset_top = 304.0
+offset_right = 1318.0
+offset_bottom = 916.0
 mouse_filter = 2
-texture = ExtResource("2_al0ko")
+texture = ExtResource("2_l5701")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -13.0
+offset_top = -100.0
+offset_right = 1175.0
+offset_bottom = 467.0
+mouse_filter = 2
+texture = ExtResource("3_e6uhk")
+expand_mode = 1
 
 [node name="Header" parent="." instance=ExtResource("3_u8cus")]
 
@@ -92,5 +107,14 @@ position = Vector2(123, 46)
 scale = Vector2(0.825807, 1.31603)
 
 [node name="footer" parent="." instance=ExtResource("4_rchxh")]
+
+[node name="ganar" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_l5701")
+
+[node name="perder" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_e6uhk")
+
+[node name="palancaS" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_l5701")
 
 [connection signal="input_event" from="palanca" to="." method="_on_palanca_input_event"]

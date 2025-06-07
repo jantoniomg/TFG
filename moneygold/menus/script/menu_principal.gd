@@ -9,6 +9,5 @@ func _on_banco_pressed() -> void:
 func _on_opciones_pressed() -> void:
 	get_tree().change_scene_to_file("res://menus/menuscene/Opciones.tscn")
 
-
 func _on_salir_pressed() -> void:
 	get_tree().quit()

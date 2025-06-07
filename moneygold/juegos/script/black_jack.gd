@@ -82,7 +82,7 @@ func ocultar_botones():
 	$Reiniciar.visible = false
 
 func agregar_carta_jugador():
-	var carta := obtener_siguiente_carta()
+	var carta = obtener_siguiente_carta()
 	carta.position = Vector2(pos_x_jugador, Y_JUGADOR)
 	carta.boca_abajo = false
 	pos_x_jugador += 100
@@ -91,7 +91,7 @@ func agregar_carta_jugador():
 	if puntos_jugador > 21:
 		perder()
 
-func agregar_carta_crupier(boca_arriba := true):
+func agregar_carta_crupier(boca_arriba = true):
 	var carta = obtener_siguiente_carta()
 	carta.position = Vector2(pos_x_crupier, Y_CRUPIER)
 	carta.boca_abajo = not boca_arriba
@@ -115,7 +115,7 @@ func obtener_siguiente_carta() -> Node:
 	if indice_carta > get_child_count():
 		print("No quedan cartas en la baraja")
 		return null
-	var carta := get_child(get_child_count() - indice_carta)
+	var carta = get_child(get_child_count() - indice_carta)
 	indice_carta += 1
 	return carta
 
@@ -124,14 +124,17 @@ func ganar():
 	await CargarDatos.guardar_datos_en_firestore()
 	ocultar_botones()
 	mostrar_boton_reiniciar()
+	$ganar.play()
 
 func perder():
 	ocultar_botones()
 	mostrar_boton_reiniciar()
+	$perder.play()
 
 func empate():
 	ocultar_botones()
 	mostrar_boton_reiniciar()
+	$perder.play()
 
 func verificar_resultado():
 	if puntos_crupier > 21 or puntos_jugador > puntos_crupier:
@@ -165,6 +168,7 @@ func jugar() -> void:
 	$Reiniciar.visible = false
 
 func _on_pedir_pressed() -> void:
+	$carta.play()
 	agregar_carta_jugador()
 
 func _on_pasar_pressed() -> void:
@@ -184,7 +188,7 @@ func _on_pasar_pressed() -> void:
 		agregar_carta_crupier()
 
 	verificar_resultado()
-	
+
 func mostrar_boton_reiniciar():
 		$Reiniciar.visible = true
 		$Jugar.disabled = true
@@ -194,7 +198,8 @@ func _on_reiniciar_pressed() -> void:
 	reiniciar_juego()
 	$Jugar.disabled = false
 	$Reiniciar.visible = false
-
+	$ganar.stop()
+	$perder.stop()
 
 func reiniciar_juego():
 	for carta in get_tree().get_nodes_in_group("cartas"):

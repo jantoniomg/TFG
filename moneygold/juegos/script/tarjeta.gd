@@ -5,8 +5,7 @@ var icono : int = 0
 @onready var animacion : AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready():
-	var random := randi_range(0, 100)
-	
+	var random = randi_range(0, 100)
 	if random < 20:
 		icono = 0
 	elif random < 35:
@@ -20,4 +19,4 @@ func _ready():
 	else: 
 		icono = 5
 
-	animacion.play(str(icono))  # Reproduce la animación que corresponde al ID
+	animacion.play(str(icono))

@@ -37,7 +37,6 @@ func genera_tarjeta():
 func girar():
 	twen = create_tween()
 	twen.tween_property(self, "position", Vector2(position.x, (position.y - tamaño)), giro)
-
 	if giro < 0.15 + parada:
 		giro += giro_lento
 		giro_lento += 0.0003
@@ -47,13 +46,11 @@ func girar():
 		print("✅ Giro finalizado, emitiendo señal")
 		emit_signal("giro_finalizado")
 		return
-
-
 	twen.tween_callback(girar)
 
 func obtener_tarjeta_visible() -> Tarjeta:
 	var tarjeta_cercana : Tarjeta = null
-	var distancia_min := INF
+	var distancia_min = INF
 
 	for child in get_children():
 		if child is Tarjeta:

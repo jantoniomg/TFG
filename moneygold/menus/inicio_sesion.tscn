@@ -69,7 +69,7 @@ vertical_alignment = 1
 [node name="Usuario" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-placeholder_text = "Usuario"
+placeholder_text = "Email"
 
 [node name="Contraseña" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2

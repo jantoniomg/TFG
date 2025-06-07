@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func update_botones_disponibles() -> void:
 	var dinero_disponible = CargarDatos.dineroFisico
-	var seleccionado_aun_valido := false
+	var seleccionado_aun_valido = false
 
 	for child in get_children():
 		if child is Button:

@@ -20,6 +20,10 @@ config/icon="uid://ddlhfbrgbcnun"
 CargarDatos="*res://autoload/cargarDatos.gd"
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 
+[display]
+
+window/size/resizable=false
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")

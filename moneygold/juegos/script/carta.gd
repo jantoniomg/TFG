@@ -4,7 +4,7 @@ class_name Carta
 var rango: String
 var palo: String
 var valor: int
-var boca_abajo := true
+var boca_abajo = true
 
 func obtener_valor() -> int:
 	return valor
