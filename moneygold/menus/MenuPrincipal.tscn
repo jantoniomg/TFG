@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ocbx5oihfs0t"]
+[gd_scene load_steps=8 format=3 uid="uid://ocbx5oihfs0t"]
 
 [ext_resource type="Script" uid="uid://co6b0rnkvinfd" path="res://menus/script/menu_principal.gd" id="1_1l7mr"]
 [ext_resource type="Texture2D" uid="uid://cd52oqbhqi5id" path="res://assets/images/fondo.png" id="2_1l7mr"]
@@ -23,6 +23,24 @@ border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_srnkm"]
 bg_color = Color(0.47451, 0.266667, 0.0705882, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.960784, 0.678431, 0.235294, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1l7mr"]
+bg_color = Color(0.47451, 0.266667, 0.0705882, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.960784, 0.678431, 0.235294, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5xc8"]
+bg_color = Color(0, 0, 0, 0.647059)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -101,6 +119,51 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_srnkm")
 text = "SALIR"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 169.0
+offset_right = 311.0
+offset_bottom = 468.0
+color = Color(0.576471, 0.156863, 0.054902, 1)
+
+[node name="titulo" type="Label" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.960784, 0.678431, 0.235294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_1l7mr")
+text = "MILLONARIOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -104.5
+offset_bottom = 149.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.886275, 0.576471, 0.0705882, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_g5xc8")
+text = "
+- Juanan : 111350
+- Manu : 101420
+- Roberto : 98270
+- Ramon : 76660
+- Laura : 55300
+- Clara : 52800
+- Paco : 40950"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/banco" to="." method="_on_banco_pressed"]
